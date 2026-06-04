@@ -287,7 +287,7 @@ export const projectDetails: ProjectDetail[] = [
     title: "Xdemia Website Revamp",
     role: "UI/UX Designer",
     detail:
-      "In the Xdemia revamp project, I worked on the Scholarships section, focusing on improving functionality and user experience. I resolved UI irregularities such as missing images and layout misalignments by adjusting element placement, sizing, and spacing. I refined the scholarship detail view to better match the intended design and improved information presentation, and added sorting functionality to enhance discoverability.",
+      "In the Xdemia revamp project, I worked on the Scholarships section, focusing on improving functionality and user experience. I resolved UI irregularities such as missing images and layout misalignments by adjusting element placement, sizing, and spacing. I refined the scholarship detail view to better align with the original design and improve information structure, and added sorting functionality to improve discoverability.",
     link: "https://www.figma.com/proto/dXb8mw5SgRNWv0s6o8c9cl/XDEMIA-REVAMP?node-id=758-2066&p=f&t=hPovzgzZn0Dr7kef-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=142%3A4063&show-proto-sidebar=1",
   },
   {
