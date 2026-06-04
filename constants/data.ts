@@ -279,7 +279,7 @@ export const projectDetails: ProjectDetail[] = [
     title: "MyBaBel Website",
     role: "Frontend Developer",
     detail:
-      "In the development of the MyBaBel project, I was responsible for establishing the initial project structure and developing the homepage as the foundation of the application. I also contributed to improving key UI components such as the navbar and footer to create a more consistent and intuitive user experience across the platform. Additionally, I helped optimize several pages while also supporting testing and debugging to maintain overall application stability and reduce potential issues during use.",
+      "In the development of the MyBaBel project, I was responsible for establishing the initial project structure and developing the homepage as the foundation of the application. I also contributed to improving key UI components such as the navbar and footer to ensure a more consistent and intuitive user experience. Additionally, I helped optimize pages while supporting testing and debugging to maintain stability and reduce issues.",
     link: "https://mybabel24.vercel.app/",
   },
   {
@@ -287,7 +287,7 @@ export const projectDetails: ProjectDetail[] = [
     title: "Xdemia Website Revamp",
     role: "UI/UX Designer",
     detail:
-      "In the Xdemia revamp project, I primarily worked on the Scholarships section, focusing on improving both functionality and user experience. I resolved UI inconsistencies such as missing images and layout misalignments by adjusting element placement, sizing, and spacing. I also refined the scholarship detail view to better match the intended design and improve information presentation. Finally, I added sorting functionality to help users more easily browse and find relevant scholarship opportunities.",
+      "In the Xdemia revamp project, I primarily worked on the Scholarships section, focusing on improving both functionality and user experience. I resolved UI inconsistencies such as missing images and layout misalignments by adjusting element placement, sizing, and spacing. I also refined the scholarship detail view to better match the intended design and improve information presentation, and added sorting functionality to enhance discoverability.",
     link: "https://www.figma.com/proto/dXb8mw5SgRNWv0s6o8c9cl/XDEMIA-REVAMP?node-id=758-2066&p=f&t=hPovzgzZn0Dr7kef-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=142%3A4063&show-proto-sidebar=1",
   },
   {
