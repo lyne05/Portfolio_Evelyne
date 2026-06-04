@@ -4,7 +4,7 @@
     "slug": "Portofolio-EvelyneNatalie",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./public/images/logo-eve.svg",
     "scheme": "portofolioevelynenatalie",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -23,7 +23,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./public/images/logo-eve.svg"
     },
     "plugins": [
       "expo-router",
