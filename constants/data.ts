@@ -12,7 +12,7 @@ export const personalInfo = {
   github: "https://github.com/username",
   linkedin: "https://linkedin.com/in/evelynenatalie",
   cvUrl:
-    "https://drive.google.com/file/d/1og1-AKIYMwapJZqCoHExadXoqSzROsZG/view?usp=sharing",
+    "https://drive.google.com/file/d/1VxPM--e_FxoAQ78Wr75gNqLkPQ2k4KD5/view?usp=drive_link",
 };
 
 export const skills = [
