@@ -108,14 +108,17 @@ export default function About() {
               color: colors.silentNavy,
               lineHeight: 1.75,
               fontSize: "0.97rem",
+              maxWidth: isMobile ? "100%" : "680px",
             }}
           >
-            I'm an Informatics student with a strong interest in frontend
-            development and mobile app development. I have experience building
-            websites and UI/UX interfaces using HTML, CSS and React, developing
-            mobile applications with Kotlin, and managing data with MySQL and
-            Firebase. I like to work in teams, could help solving problem and
-            motivated to learn more about information and technology.
+            I&apos;m an Informatics student with a strong interest in frontend and
+            mobile application development. I have experience building
+            responsive web applications using HTML, CSS, JavaScript, and
+            React.js, as well as developing mobile applications using Kotlin and
+            React Native. I&apos;m also familiar with managing and integrating
+            databases using MySQL and Firebase. I&apos;m able to collaborate
+            effectively in teams and contribute to problem-solving, and am
+            motivated to learn more about information technology.
           </p>
 
           <p

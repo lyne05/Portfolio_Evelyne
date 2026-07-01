@@ -9,10 +9,10 @@ export const personalInfo = {
   location: "Tangerang, Indonesia",
   email: "evelyne.natalie2705@gmail.com",
   whatsapp: "https://wa.me/6282181873469",
-  github: "https://github.com/username",
+  github: "https://github.com/lyne05",
   linkedin: "https://linkedin.com/in/evelynenatalie",
   cvUrl:
-    "https://drive.google.com/file/d/1VxPM--e_FxoAQ78Wr75gNqLkPQ2k4KD5/view?usp=drive_link",
+    "https://drive.google.com/file/d/1QpxoA4AYmXg0wvgHHLUJrVO9PiN7bkgl/view?usp=sharing",
 };
 
 export const skills = [
@@ -22,11 +22,6 @@ export const skills = [
       {
         name: "Python",
         icon: "https://cdn.simpleicons.org/python/3776AB",
-        level: 3,
-      },
-      {
-        name: "C#",
-        icon: "/images/c-sharp-programming-language-icon.webp",
         level: 3,
       },
       {
@@ -62,7 +57,7 @@ export const skills = [
     ],
   },
   {
-    category: "Frontend Web",
+    category: "Frontend Web Development",
     items: [
       {
         name: "HTML",
@@ -99,21 +94,6 @@ export const skills = [
         icon: "https://cdn.simpleicons.org/supabase/3ECF8E",
         level: 2,
       },
-      {
-        name: "SQL Server Management Studio",
-        icon: "/images/ssms-icon.webp",
-        level: 2,
-      },
-    ],
-  },
-  {
-    category: "Frameworks",
-    items: [
-      {
-        name: ".NET",
-        icon: "https://cdn.simpleicons.org/dotnet/512BD4",
-        level: 2,
-      },
     ],
   },
   {
@@ -123,11 +103,6 @@ export const skills = [
         name: "Visual Studio Code",
         icon: "/images/visual-studio-code-icon.webp",
         level: 4,
-      },
-      {
-        name: "Visual Studio",
-        icon: "/images/visual-studio-icon.png",
-        level: 3,
       },
       {
         name: "Figma",
@@ -205,10 +180,10 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "MyBaBel Website",
+    title: "MyBaBel",
     tag: "Website",
     year: "2024",
-    desc: "A tourism website that introduces the culture, traditions, and attractions of Bangka Belitung through an engaging and responsive web experience. The project was developed collaboratively using modern web technologies as part of a web development learning journey.",
+    desc: "A tourism website that introduces the culture, traditions, and attractions of Bangka Belitung through an responsive web experience. The project was developed collaboratively using modern web technologies as part of a web development learning journey.",
     image: "/images/project/Project1.png",
     tools: ["HTML", "CSS", "JavaScript"],
     ongoing: false,
@@ -244,20 +219,11 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: "GatherHub Mobile App",
+    title: "GatherHub",
     tag: "Mobile App",
     year: "2026",
     desc: "An event management application that enables users to browse events, purchase tickets, and manage their bookings directly from their mobile devices. Built as a collaborative project, it focuses on providing a simple and convenient event ticketing experience.",
     tools: ["React Native", "Expo", "Supabase"],
-    ongoing: true,
-  },
-  {
-    id: 6,
-    title: "GatherHub Management System",
-    tag: "Desktop",
-    year: "2026",
-    desc: "An event ticketing and management platform designed to simplify event organization and ticket purchasing. Developed collaboratively, it supports organizers and attendees throughout the entire event journey in a clear and organized way.",
-    tools: [".NET", "C#", "SSMS"],
     ongoing: true,
   },
 ];
@@ -276,7 +242,7 @@ export interface ProjectDetail {
 export const projectDetails: ProjectDetail[] = [
   {
     id: 1,
-    title: "MyBaBel Website",
+    title: "MyBaBel",
     role: "Frontend Developer",
     detail:
       "In the development of the MyBaBel project, I was responsible for establishing the initial project structure and developing the homepage as the foundation of the application. I also contributed to improving key UI components such as the navbar and footer to ensure a more consistent and intuitive user experience. Additionally, I helped optimize pages while supporting testing and debugging to maintain stability and reduce issues.",
@@ -308,17 +274,10 @@ export const projectDetails: ProjectDetail[] = [
   },
   {
     id: 5,
-    title: "GatherHub Mobile App",
+    title: "GatherHub",
     role: "Mobile Developer",
     detail:
       "Developed key mobile interfaces for ticket browsing and event management, integrated Supabase services, and collaborated on creating a seamless ticket purchasing experience for users.",
     link: "#",
-  },
-  {
-    id: 6,
-    title: "GatherHub Management System",
-    role: ".NET Developer",
-    detail:
-      "Contributed to the development of an event ticketing and management platform using .NET and SQL Server, focusing on event management features, ticket processing, and database integration.",
   },
 ];

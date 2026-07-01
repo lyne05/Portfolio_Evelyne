@@ -31,6 +31,15 @@ const contactLinks = [
     iconSize: 28,
     accent: "#5990c0",
   },
+  {
+    key: "github",
+    label: "GitHub",
+    value: () => "lyne05",
+    href: () => personalInfo.github,
+    icon: "/images/icon-github.png",
+    iconSize: 28,
+    accent: "#cea273",
+  },
 ];
 
 export default function Contact() {
@@ -64,7 +73,7 @@ export default function Contact() {
 
       <div
         className="section-inner"
-        style={{ maxWidth: 760, position: "relative", zIndex: 1 }}
+        style={{ maxWidth: 1040, position: "relative", zIndex: 1 }}
       >
         <div style={{ textAlign: "center", marginBottom: isMobile ? 40 : 64 }}>
           <p
@@ -87,7 +96,7 @@ export default function Contact() {
               margin: "0 0 21px",
             }}
           >
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p
             style={{
@@ -99,7 +108,7 @@ export default function Contact() {
             }}
           >
             Looking forward to connecting with new people, collaborating and
-            build new things together.
+            build new things together
           </p>
           <p
             style={{
@@ -110,7 +119,7 @@ export default function Contact() {
               margin: "0 auto",
             }}
           >
-            Currently looking for an internship opportunity.
+            Currently looking for an internship opportunity
           </p>
           <p
             style={{
@@ -121,14 +130,14 @@ export default function Contact() {
               margin: "0 auto",
             }}
           >
-            Feel free to reach out to me through the contact information below.
+            Feel free to reach out to me through the contact information below
           </p>
         </div>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(4, minmax(0, 1fr))",
             gap: isMobile ? 14 : 20,
           }}
         >
