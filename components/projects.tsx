@@ -3,7 +3,6 @@ import { useWindowDimensions } from "react-native";
 import { createPortal } from "react-dom";
 import { colors } from "../constants/colors";
 import { projectDetails, projects, projectTags } from "../constants/data";
-import PhonePreview from "../constants/phonepreview";
 
 export default function Projects() {
   const { width } = useWindowDimensions();
@@ -16,10 +15,8 @@ export default function Projects() {
   >(null);
   const [hoveredCloseButton, setHoveredCloseButton] = useState(false);
   const [hoveredProjectLink, setHoveredProjectLink] = useState(false);
+  const [hoveredGithubLink, setHoveredGithubLink] = useState(false);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [activePhoneProject, setActivePhoneProject] = useState<number | null>(
-    null,
-  );
 
   const filtered =
     activeFilter === "All"
@@ -289,7 +286,15 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div style={{ marginTop: "auto" }}>
+                  <div
+                    style={{
+                      marginTop: "auto",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: 12,
+                    }}
+                  >
                     {project.ongoing ? (
                       <span
                         style={{
@@ -306,7 +311,6 @@ export default function Projects() {
                     ) : (
                       <button
                         type="button"
-                        onPointerDown={() => setSelectedProject(project.id)}
                         onClick={() => setSelectedProject(project.id)}
                         onMouseEnter={() => setHoveredProjectButton(project.id)}
                         onMouseLeave={() => setHoveredProjectButton(null)}
@@ -347,6 +351,20 @@ export default function Projects() {
                         View Project
                       </button>
                     )}
+
+                    {project.featured && (
+                      <span
+                        title="Featured project"
+                        aria-label="Featured project"
+                        style={{
+                          color: colors.sandyAmber,
+                          fontSize: "1.5rem",
+                          lineHeight: 1,
+                        }}
+                      >
+                        ★
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -383,6 +401,8 @@ export default function Projects() {
                 background: colors.lightCream,
                 borderRadius: 8,
                 overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
                 boxShadow: "0 28px 80px rgba(0,0,0,0.42)",
                 animation: "modalRise 0.24s ease both",
               }}
@@ -397,6 +417,7 @@ export default function Projects() {
                     )`,
                   padding: isMobile ? "28px 22px" : "32px 34px",
                   position: "relative",
+                  flexShrink: 0,
                 }}
               >
                 <button
@@ -472,9 +493,8 @@ export default function Projects() {
                 style={{
                   padding: isMobile ? "22px" : "34px",
                   overflowY: "auto",
-                  maxHeight: isMobile
-                    ? "calc(100vh - 220px)"
-                    : "calc(100vh - 260px)",
+                  flex: 1,
+                  minHeight: 0,
                   background: colors.lightCream,
                 }}
               >
@@ -504,94 +524,95 @@ export default function Projects() {
                   {selectedDetail.detail}
                 </p>
 
-                {selectedDetail.link && (
-                  <button
-                    onClick={() => {
-                      if (selectedDetail.showPhonePreview) {
-                        setActivePhoneProject(selectedDetail.id);
-                      } else {
-                        window.open(selectedDetail.link, "_blank");
-                      }
-                    }}
-                    onMouseEnter={() => setHoveredProjectLink(true)}
-                    onMouseLeave={() => setHoveredProjectLink(false)}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 6,
-                      marginTop: 28,
-                      padding: "10px 16px",
-
-                      background: hoveredProjectLink
-                        ? colors.oceanBlue
-                        : "rgba(39,96,108,0.1)",
-
-                      border: `1px solid ${
-                        hoveredProjectLink
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 10,
+                    marginTop: 28,
+                  }}
+                >
+                  {selectedDetail.link && (
+                    <button
+                      onClick={() => window.open(selectedDetail.link, "_blank")}
+                      onMouseEnter={() => setHoveredProjectLink(true)}
+                      onMouseLeave={() => setHoveredProjectLink(false)}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 6,
+                        padding: "10px 16px",
+                        background: hoveredProjectLink
                           ? colors.oceanBlue
-                          : "rgba(39,96,108,0.25)"
-                      }`,
+                          : "rgba(39,96,108,0.1)",
+                        border: `1px solid ${
+                          hoveredProjectLink
+                            ? colors.oceanBlue
+                            : "rgba(39,96,108,0.25)"
+                        }`,
+                        borderRadius: 4,
+                        color: hoveredProjectLink
+                          ? colors.white
+                          : colors.oceanBlue,
+                        cursor: "pointer",
+                        fontFamily: "var(--font-body)",
+                        fontSize: "0.75rem",
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                        transition:
+                          "background 0.2s ease, border 0.2s ease, color 0.2s ease, transform 0.2s ease",
+                        transform: hoveredProjectLink
+                          ? "translateY(-2px)"
+                          : "translateY(0)",
+                      }}
+                    >
+                      Project Link
+                    </button>
+                  )}
 
-                      borderRadius: 4,
-                      color: hoveredProjectLink
-                        ? colors.white
-                        : colors.oceanBlue,
-                      cursor: "pointer",
-
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.75rem",
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      fontWeight: 600,
-
-                      transition:
-                        "background 0.2s ease, border 0.2s ease, color 0.2s ease, transform 0.2s ease",
-
-                      transform: hoveredProjectLink
-                        ? "translateY(-2px)"
-                        : "translateY(0)",
-                    }}
-                  >
-                    Project Link
-                  </button>
-                )}
+                  {selectedDetail.githubLink && (
+                    <button
+                      onClick={() => window.open(selectedDetail.githubLink, "_blank")}
+                      onMouseEnter={() => setHoveredGithubLink(true)}
+                      onMouseLeave={() => setHoveredGithubLink(false)}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 6,
+                        padding: "10px 16px",
+                        background: hoveredGithubLink
+                          ? colors.oceanBlue
+                          : "rgba(39,96,108,0.1)",
+                        border: `1px solid ${
+                          hoveredGithubLink
+                            ? colors.oceanBlue
+                            : "rgba(39,96,108,0.25)"
+                        }`,
+                        borderRadius: 4,
+                        color: hoveredGithubLink
+                          ? colors.white
+                          : colors.oceanBlue,
+                        cursor: "pointer",
+                        fontFamily: "var(--font-body)",
+                        fontSize: "0.75rem",
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                        transition:
+                          "background 0.2s ease, border 0.2s ease, color 0.2s ease, transform 0.2s ease",
+                        transform: hoveredGithubLink
+                          ? "translateY(-2px)"
+                          : "translateY(0)",
+                      }}
+                    >
+                      GitHub
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          </div>,
-          document.body,
-        )}
-
-      {activePhoneProject &&
-        createPortal(
-          <div
-            onClick={() => setActivePhoneProject(null)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.75)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 10000,
-              padding: 20,
-            }}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                overflow: "hidden",
-              }}
-            >
-              <PhonePreview
-                projectId={activePhoneProject}
-                onClose={() => setActivePhoneProject(null)}
-              />
             </div>
           </div>,
           document.body,

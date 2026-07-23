@@ -175,6 +175,7 @@ export interface Project {
   image?: string;
   tools: string[];
   ongoing?: boolean;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -187,6 +188,7 @@ export const projects: Project[] = [
     image: "/images/project/Project1.png",
     tools: ["HTML", "CSS", "JavaScript"],
     ongoing: false,
+    featured: true,
   },
   {
     id: 2,
@@ -205,7 +207,9 @@ export const projects: Project[] = [
     year: "2025",
     desc: "A mobile application that helps users understand the nutritional content of the foods they consume every day. Developed collaboratively as a hands-on mobile app development project, it focuses on making nutrition information more accessible and easier to understand.",
     tools: ["Kotlin", "Firebase"],
-    ongoing: true,
+    image: "/images/project/wop.png",
+    ongoing: false,
+    featured: true,
   },
   {
     id: 4,
@@ -223,8 +227,10 @@ export const projects: Project[] = [
     tag: "Mobile App",
     year: "2026",
     desc: "An event management application that enables users to browse events, purchase tickets, and manage their bookings directly from their mobile devices. Built as a collaborative project, it focuses on providing a simple and convenient event ticketing experience.",
+    image: "/images/project/Project5.png",
     tools: ["React Native", "Expo", "Supabase"],
-    ongoing: true,
+    ongoing: false,
+    featured: true,
   },
 ];
 
@@ -236,7 +242,7 @@ export interface ProjectDetail {
   role: string;
   detail: string;
   link?: string;
-  showPhonePreview?: boolean;
+  githubLink?: string;
 }
 
 export const projectDetails: ProjectDetail[] = [
@@ -247,6 +253,7 @@ export const projectDetails: ProjectDetail[] = [
     detail:
       "In the development of the MyBaBel project, I was responsible for establishing the initial project structure and developing the homepage as the foundation of the application. I also contributed to improving key UI components such as the navbar and footer to ensure a more consistent and intuitive user experience. Additionally, I helped optimize pages while supporting testing and debugging to maintain stability and reduce issues.",
     link: "https://mybabel24.vercel.app/",
+    githubLink: "https://github.com/lyne05/MyBaBel",
   },
   {
     id: 2,
@@ -261,7 +268,8 @@ export const projectDetails: ProjectDetail[] = [
     title: "Bitecheck",
     role: "Mobile Developer",
     detail:
-      "Participated in the development of a native mobile application for nutrition monitoring, focusing on application features, interface implementation, and Firebase integration as part of a collaborative learning project.",
+      "Throughout the Bitecheck project, I worked on developing multiple pages and ensuring their functionality ran smoothly and as intended. I integrated Firebase for database management and connected the machine learning model to enable the application's AI functionality. I also contributed to the interface design and supported testing and debugging to maintain the overall stability of the application.",
+    githubLink: "https://github.com/lyne05/Bitecheck",
   },
   {
     id: 4,
@@ -269,15 +277,14 @@ export const projectDetails: ProjectDetail[] = [
     role: "Mobile Developer",
     detail:
       "In the Aurealisse project, I developed and improved the navigation flow and overall UI/UX to deliver a smoother and more intuitive mobile commerce experience across devices. The system featured core e-commerce functionality, including cart management, wishlist, and order history with quantity control, supporting a complete shopping flow. A dark and light mode system was also included to enhance user preference and accessibility.",
-    link: "https://aurealisse.vercel.app/",
-    showPhonePreview: true,
+    githubLink: "https://github.com/lyne05/Aurealisse",
   },
   {
     id: 5,
     title: "GatherHub",
     role: "Mobile Developer",
     detail:
-      "Developed key mobile interfaces for ticket browsing and event management, integrated Supabase services, and collaborated on creating a seamless ticket purchasing experience for users.",
-    link: "#",
+      "As part of the GatherHub project, I helped build and design several pages while ensuring that their functionality worked smoothly and as intended. I also assisted with integrating Supabase for data management and supported testing and debugging to identify issues across different pages. Through these contributions, I helped maintain a functional and consistent user experience throughout the application.",
+    githubLink: "https://github.com/highlysoul/GatherHub",
   },
 ];
